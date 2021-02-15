@@ -8,7 +8,19 @@
 </head>
 <body>
     <div id="app">
-        <some-el></some-el>
+        <div>
+            <button v-for = "tab in tabs" :key = "tab" @click = "currentTab = tab">{{tab}}</button>
+        </div>
+        <component :is="currentComponent"></component>
+        
+        
+        <!-- <some-el @parent = "some" :title = "someSrting" :counter = "counter" @increase = "increase">
+            <div>I'm injected as slot</div>
+        </some-el>
+        <some-el @parent = "some" :title = "someSrting" :counter = "counter" @increase = "increase"></some-el>
+        <some-el @parent = "some" :title = "someSrting" :counter = "counter" @increase = "increase"></some-el> -->
+        <!--<drpdown :title = "Select someone" :list = "list" :classes = ""></drpdown>-->
+
     </div>
 
 
