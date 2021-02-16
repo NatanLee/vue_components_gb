@@ -1,7 +1,7 @@
-[
+{
     "amount": 46600,
     "countGoods": 3,
-    "content": [
+    "contents": [
         {
             "quantity": 2,
             "id_product": 124,
@@ -21,4 +21,4 @@
             "price": 45600 
         }
     ]
-]
+}
