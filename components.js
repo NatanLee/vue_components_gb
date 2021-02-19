@@ -9,8 +9,7 @@ Vue.component('component-three', {
 });
 
 
-
-/*const childElement = {
+const childElement = {
     template: `<p>some text in child element</p>`,
     mounted(){
         //console.log('child component', this);
@@ -28,17 +27,18 @@ Vue.component('some-el',{
         }
     },
     template: `<div>
-            <h2 @click = "some">{{title}}</h2>
-            <hr>
-            <h2 @click = "$emit('parent')">{{title}}</h2>
-            <slot>
-                <p>Default</p>
-            </slot>
-            <button @click = "$emit('increase')">Increase</button>
-            <p>{{counter}}</p>
-            <p>I'm component!</p>
-            <child-element />
-        </div>`,
+                <hr>        
+                <h2 @click = "some">{{title}}</h2>
+                
+                <h2 @click = "$emit('parent')">{{title}}</h2>
+                <slot>
+                    <p>Default</p>
+                </slot>
+                <button @click = "$emit('increase')">Increase</button>
+                <p>{{counter}}</p>
+                <p>I'm component!</p>
+                <child-element />
+            </div>`,
     data(){
         return{
             //innerTitle = 'title',
@@ -48,4 +48,3 @@ Vue.component('some-el',{
         //console.log('child component', this);
     }
 });
-*/
