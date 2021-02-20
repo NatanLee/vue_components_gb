@@ -1,16 +1,16 @@
 Vue.component('products', {
     data(){
         return {
-            catalogUrl: '/catalogData.json',
+            catalogUrl: 'products',
             products: [],
             filtered: [],
             imgCatalog: 'https://placehold.it/200x150',
         }
     },
     methods: {
-        filter(){
-            let regexp = new RegExp(this.userSearch, 'i');
-            this.filtered = this.products.filter(el => regexp.test(el.product_name));
+        filter(value){
+            let regexp = new RegExp(value, 'i');
+            this.filtered = this.products.filter(el => regexp.test(el.title));           
         }
     },
     mounted(){
@@ -31,7 +31,7 @@ Vue.component('products', {
     },
     template: `
         <div class="products">
-            <product ref="refref" v-for="item of filtered" :key="item.id_product" :img="imgCatalog" :product="item"></product>
+            <product ref="refref" v-for="item of filtered" :key="item.id" :img="imgCatalog" :product="item"></product>
         </div>
     `
 });
@@ -52,7 +52,7 @@ Vue.component('product', {
     <div class="product-item">
                 <img :src="img" alt="Some img">
                 <div class="desc">
-                    <h3>{{product.product_name}}</h3>
+                    <h3>{{product.title}}</h3>
                     <p>{{product.price}} $</p>
                     <button class="buy-btn" @click="cartAPI.addProduct(product)">Купить</button>
 <!-- 1                    <button class="buy-btn" @click="$root.$refs.cart.addProduct(product)">Купить</button>-->

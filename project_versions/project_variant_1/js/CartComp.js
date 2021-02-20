@@ -3,7 +3,7 @@ Vue.component('cart', {
     template: `<div class="cart-block" v-show="visibility">
                 <p v-if="!cartItems.length">Корзина пуста</p>
                 <cart-item class="cart-item" v-for="item of cartItems"
-                    :key="item.id_product"
+                    :key="item.id"
                     :cart-item="item"
                     :img="img">
                 </cart-item>
@@ -17,7 +17,7 @@ Vue.component('cart-item', {
                     <div class="product-bio">
                         <img :src="img" alt="Some image">
                         <div class="product-desc">
-                            <p class="product-title">{{cartItem.product_name}}</p>
+                            <p class="product-title">{{cartItem.title}}</p>
                             <p class="product-quantity">Quantity: {{cartItem.quantity}}</p>
                             <p class="product-single-price">$ {{cartItem.price}} each</p>
                         </div>
