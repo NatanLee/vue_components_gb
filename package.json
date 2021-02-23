@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NatanLee/vue_components_gb#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "moment": "^2.29.1"
   }
 }
